@@ -1,0 +1,16 @@
+@import "@/assets/utils/variables";
+@import "@/assets/utils/reset";
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    min-height: 100vh;
+    font-size: 16px;
+    background-color: var(--light-1);
+}
+
+@import "@/assets/utils/flexbox";
+@import "@/assets/utils/spacing";
+@import "@/assets/utils/buttons";

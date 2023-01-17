@@ -1,0 +1,27 @@
+.btn {
+    background: var(--primary-1);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: var(--primary-1);
+    color: var(--white);
+
+    &:hover {
+        background: var(--primary-2);
+    }
+}
+
+.btn-danger {
+    background: var(--danger-1);
+    color: var(--white);
+
+    &:hover {
+        background: var(--danger-2);
+    }
+}
