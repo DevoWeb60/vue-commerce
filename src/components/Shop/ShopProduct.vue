@@ -1,3 +1,16 @@
+<script setup lang="ts">
+import type { ProductInterface } from "@/types";
+import { formatPrice } from "@/utils";
+
+defineProps<{
+    product: ProductInterface;
+}>();
+
+const emit = defineEmits<{
+    (e: "addProductToCart", idProduct: number): void;
+}>();
+</script>
+
 <template>
     <div class="product d-flex flex-column p-10">
         <div class="product-image">
@@ -7,20 +20,17 @@
             <h4>{{ product.title }}</h4>
             <p>{{ product.description }}</p>
             <div class="d-flex align-items-center">
-                <span class="flex-fill">{{ product.price }} €</span>
-                <button class="btn btn-primary">Ajouté au panier</button>
+                <span class="flex-fill">{{ formatPrice(product.price) }}</span>
+                <button
+                    @click="emit('addProductToCart', product.id)"
+                    class="btn btn-primary"
+                >
+                    Ajouter
+                </button>
             </div>
         </div>
     </div>
 </template>
-
-<script setup lang="ts">
-import type { ProductInterface } from "@/types/product.interface";
-
-defineProps<{
-    product: ProductInterface;
-}>();
-</script>
 
 <style scoped lang="scss">
 .product {
@@ -28,7 +38,7 @@ defineProps<{
     border: 1px solid var(--border);
     border-radius: var(--border-radius);
     &-image {
-        background-image: url("../../assets/macbookair.png");
+        background-image: url("../../assets/images/macbookair.png");
         height: 250px;
         background-size: cover;
         background-position: center;
