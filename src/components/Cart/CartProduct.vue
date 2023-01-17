@@ -19,7 +19,11 @@ const emit = defineEmits<{
             @click="emit('removeProductFromCart', product.id)"
             class="btn btn-danger"
         >
-            {{ product.quantity > 1 ? "Retirer" : "Supprimer" }}
+            <font-awesome-icon
+                icon="fas fa-minus-circle"
+                v-if="product.quantity > 1"
+            />
+            <font-awesome-icon icon="fas fa-trash" v-else />
         </button>
     </div>
 </template>
