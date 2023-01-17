@@ -4,21 +4,23 @@
             <!-- <img src="../../assets/macbookair.png" alt="Macbook Air M1" /> -->
         </div>
         <div class="p-10 d-flex flex-column">
-            <h4>Macbook Air M1</h4>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Molestiae alias natus quod id dicta iusto fugit. Sed voluptas
-                modi molestias fugiat perferendis qui, odio omnis.
-            </p>
+            <h4>{{ product.title }}</h4>
+            <p>{{ product.description }}</p>
             <div class="d-flex align-items-center">
-                <span class="flex-fill">1200 €</span>
+                <span class="flex-fill">{{ product.price }} €</span>
                 <button class="btn btn-primary">Ajouté au panier</button>
             </div>
         </div>
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { ProductInterface } from "@/types/product.interface";
+
+defineProps<{
+    product: ProductInterface;
+}>();
+</script>
 
 <style scoped lang="scss">
 .product {
