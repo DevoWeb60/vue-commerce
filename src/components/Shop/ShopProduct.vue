@@ -13,9 +13,12 @@ const emit = defineEmits<{
 
 <template>
     <div class="product d-flex flex-column p-10">
-        <div class="product-image">
-            <!-- <img src="../../assets/macbookair.png" alt="Macbook Air M1" /> -->
-        </div>
+        <div
+            class="product-image"
+            :style="{
+                backgroundImage: `url(./src/assets/images/products/${product.image})`,
+            }"
+        ></div>
         <div class="p-10 d-flex flex-column">
             <h4>{{ product.title }}</h4>
             <p>{{ product.description }}</p>
@@ -38,10 +41,10 @@ const emit = defineEmits<{
     border: 1px solid var(--border);
     border-radius: var(--border-radius);
     &-image {
-        background-image: url("../../assets/images/macbookair.png");
         height: 250px;
-        background-size: cover;
+        background-size: contain;
         background-position: center;
+        background-repeat: no-repeat;
     }
 }
 </style>

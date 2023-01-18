@@ -3,8 +3,10 @@
 <template>
     <header class="d-flex align-items-center p-10">
         <h1 class="d-flex">
-            <a href="#"><img src="../assets/images/logo.svg" alt="" /></a> Vue
-            Commerce
+            <a href="#" class="d-flex align-items-center">
+                <img src="../assets/images/logo.svg" alt="" />
+                Vue Commerce
+            </a>
         </h1>
         <ul class="flex-fill d-flex">
             <li><a href="#">Boutique</a></li>
